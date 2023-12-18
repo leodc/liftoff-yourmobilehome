@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { gradient } from "@/components/Gradient";
 import { useEffect } from "react";
 
 export default function Home() {
