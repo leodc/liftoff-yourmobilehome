@@ -2,11 +2,11 @@ import "../styles/globals.css";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Liftoff - AI-Powered Mock Interviews",
+  title: "MobileHomeBuyer - Fast & Fair Mobile Home Purchases",
   openGraph: {
-    title: "Liftoff - AI-Powered Mock Interviews",
+    title: "MobileHomeBuyer - Fast & Fair Mobile Home Purchases",
     description:
-      "Liftoff is an AI-powered mock interview platform that helps you practice for your next job interview.",
+      "MobileHomeBuyer offers quick, fair cash offers for mobile homes in any condition. Sell your home fast and hassle-free.",
     images: [
       {
         url: "https://demo.useliftoff.com/opengraph-image",
@@ -15,11 +15,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Liftoff - AI-Powered Mock Interviews",
+    title: "MobileHomeBuyer - Fast & Fair Mobile Home Purchases",
     description:
-      "Liftoff is an AI-powered mock interview platform that helps you practice for your next job interview.",
-    images: ["https://demo.useliftoff.com/opengraph-image"],
-    creator: "@tmeyer_me",
+      "MobileHomeBuyer offers quick, fair cash offers for mobile homes in any condition. Sell your home fast and hassle-free.",
+    images: ["https://demo.useliftoff.com/opengraph-image"]
   },
   metadataBase: new URL("https://demo.useliftoff.com"),
   themeColor: "#FFF",
