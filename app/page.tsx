@@ -2,27 +2,8 @@
 
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect } from "react";
 
 export default function Home() {
-  useEffect(() => {
-    const canvas = document.getElementById('gradient-canvas');
-    const ctx = canvas.getContext('2d');
-    const image = new Image();
-
-    // Set the source of the image
-    image.src = '/shutterstock_2283825159.jpg'; // Replace with your image path
-
-    image.onload = () => {
-      // Resize canvas to match the image size
-      canvas.width = image.width;
-      canvas.height = image.height;
-
-      // Draw the image onto the canvas
-      ctx.drawImage(image, 0, 0);
-    };
-  }, []);
-
   return (
     <AnimatePresence>
       <div className="min-h-[100vh] sm:min-h-screen w-screen flex flex-col relative bg-[#F2F3F5] font-inter overflow-hidden">
@@ -206,12 +187,12 @@ export default function Home() {
             ease: [0.075, 0.82, 0.965, 1],
           }}
           style={{
-            clipPath:
-              "polygon(100px 0,100% 0,calc(100% + 225px) 100%, 480px 100%)",
+            clipPath: "polygon(100px 0,100% 0,calc(100% + 225px) 100%, 480px 100%)",
+            backgroundImage: "url(/shutterstock_2283825159.jpg)"
           }}
           id="gradient-canvas"
           data-transition-in
-          className="z-50 fixed top-0 right-[-2px] w-[80%] md:w-1/2 h-screen bg-[#c3e4ff]"
+          className="z-50 fixed top-0 right-[-2px] w-[80%] md:w-1/2 h-screen bg-cover bg-center"
         ></motion.canvas>
         <div className="h-[60px] bg-[#1D2B3A] fixed bottom-0 z-20 w-full flex flex-row items-center justify-evenly">
           <p className="text-white/80 text-base md:text-lg font-semibold md:leading-[60px] whitespace-nowrap flex flex-row">
