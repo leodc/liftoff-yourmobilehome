@@ -3,25 +3,67 @@
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 
+const PaperTexture = () => (
+  <svg
+    style={{ filter: "contrast(125%) brightness(110%)" }}
+    className="fixed z-[1] w-full h-full opacity-[35%]"
+  >
+    <filter id="noise">
+      <feTurbulence
+        type="fractalNoise"
+        baseFrequency=".7"
+        numOctaves="3"
+        stitchTiles="stitch"
+      ></feTurbulence>
+      <feColorMatrix type="saturate" values="0"></feColorMatrix>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#noise)"></rect>
+  </svg>
+)
+
+const OverlayImage = () => {
+  const shape = "polygon(100px 0,100% 0,calc(100% + 225px) 100%, 480px 100%)";
+
+  const Background = () => (
+    <div
+      className="fixed top-0 right-0 w-[80%] md:w-1/2 h-screen bg-[#1F2B3A]/20"
+      style={{ clipPath: shape }}
+    ></div>
+  )
+
+  return (
+    <>
+      <Background />
+
+      <motion.canvas
+        initial={{
+          filter: "blur(20px)",
+        }}
+        animate={{
+          filter: "blur(0px)",
+        }}
+        transition={{
+          duration: 1,
+          ease: [0.075, 0.82, 0.965, 1],
+        }}
+        style={{
+          clipPath: shape,
+          backgroundImage: "url(/shutterstock_2283825159.jpg)"
+        }}
+        data-transition-in
+        className="z-50 fixed top-0 right-[-2px] w-[80%] md:w-1/2 h-screen bg-cover bg-center"
+      ></motion.canvas>
+    </>
+  )
+}
+
 export default function Home() {
   return (
     <AnimatePresence>
       <div className="min-h-[100vh] sm:min-h-screen w-screen flex flex-col relative bg-[#F2F3F5] font-inter overflow-hidden">
-        <svg
-          style={{ filter: "contrast(125%) brightness(110%)" }}
-          className="fixed z-[1] w-full h-full opacity-[35%]"
-        >
-          <filter id="noise">
-            <feTurbulence
-              type="fractalNoise"
-              baseFrequency=".7"
-              numOctaves="3"
-              stitchTiles="stitch"
-            ></feTurbulence>
-            <feColorMatrix type="saturate" values="0"></feColorMatrix>
-          </filter>
-          <rect width="100%" height="100%" filter="url(#noise)"></rect>
-        </svg>
+
+        <PaperTexture />
+
         <main className="flex flex-col justify-center h-[90%] static md:fixed w-screen overflow-hidden grid-rows-[1fr_repeat(3,auto)_1fr] z-[100] pt-[30px] pb-[320px] px-4 md:px-20 md:py-0">
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
@@ -46,8 +88,8 @@ export default function Home() {
             }}
             className="relative md:ml-[-10px] md:mb-[37px] font-extrabold text-[16vw] md:text-[30px] font-inter text-[#1E2B3A] leading-[0.9] tracking-[-2px] z-[100]"
           >
-             We buy mobile homes in any condition. <br />
-             <span className="text-[#407BBF]">Get a fair cash offer in less than 48 hours!</span> 
+            We buy mobile homes in any condition. <br />
+            <span className="text-[#407BBF]">Get a fair cash offer in less than 48 hours!</span>
           </motion.h5>
 
           <motion.div
@@ -167,33 +209,8 @@ export default function Home() {
           </div>
         </main>
 
-        {/* <div
-          className="fixed top-0 right-0 w-[80%] md:w-1/2 h-screen bg-[#1F2B3A]/20"
-          style={{
-            clipPath:
-              "polygon(100px 0,100% 0,calc(100% + 225px) 100%, 480px 100%)",
-          }}
-        ></div> */}
+        <OverlayImage />
 
-        <motion.canvas
-          initial={{
-            filter: "blur(20px)",
-          }}
-          animate={{
-            filter: "blur(0px)",
-          }}
-          transition={{
-            duration: 1,
-            ease: [0.075, 0.82, 0.965, 1],
-          }}
-          style={{
-            clipPath: "polygon(100px 0,100% 0,calc(100% + 225px) 100%, 480px 100%)",
-            backgroundImage: "url(/shutterstock_2283825159.jpg)"
-          }}
-          id="gradient-canvas"
-          data-transition-in
-          className="z-50 fixed top-0 right-[-2px] w-[80%] md:w-1/2 h-screen bg-cover bg-center"
-        ></motion.canvas>
         <div className="h-[60px] bg-[#1D2B3A] fixed bottom-0 z-20 w-full flex flex-row items-center justify-evenly">
           <p className="text-white/80 text-base md:text-lg font-semibold md:leading-[60px] whitespace-nowrap flex flex-row">
             Interviews from
