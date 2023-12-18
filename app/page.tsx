@@ -2,60 +2,8 @@
 
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-
-const PaperTexture = () => (
-  <svg
-    style={{ filter: "contrast(125%) brightness(110%)" }}
-    className="fixed z-[1] w-full h-full opacity-[35%]"
-  >
-    <filter id="noise">
-      <feTurbulence
-        type="fractalNoise"
-        baseFrequency=".7"
-        numOctaves="3"
-        stitchTiles="stitch"
-      ></feTurbulence>
-      <feColorMatrix type="saturate" values="0"></feColorMatrix>
-    </filter>
-    <rect width="100%" height="100%" filter="url(#noise)"></rect>
-  </svg>
-)
-
-const OverlayImage = () => {
-  const shape = "polygon(100px 0,100% 0,calc(100% + 225px) 100%, 480px 100%)";
-
-  const Background = () => (
-    <div
-      className="fixed top-0 right-0 w-[80%] md:w-1/2 h-screen bg-[#1F2B3A]/20"
-      style={{ clipPath: shape }}
-    ></div>
-  )
-
-  return (
-    <>
-      <Background />
-
-      <motion.canvas
-        initial={{
-          filter: "blur(20px)",
-        }}
-        animate={{
-          filter: "blur(0px)",
-        }}
-        transition={{
-          duration: 1,
-          ease: [0.075, 0.82, 0.965, 1],
-        }}
-        style={{
-          clipPath: shape,
-          backgroundImage: "url(/shutterstock_2283825159.jpg)"
-        }}
-        data-transition-in
-        className="z-50 fixed top-0 right-[-2px] w-[80%] md:w-1/2 h-screen bg-cover bg-center"
-      ></motion.canvas>
-    </>
-  )
-}
+import PaperTexture from "@/components/PaperTexture";
+import OverlayImage from "@/components/OverlayImage";
 
 const Footer = () => (
   <div className="h-[60px] bg-[#1D2B3A] fixed bottom-0 z-20 w-full flex flex-row items-center justify-evenly">
