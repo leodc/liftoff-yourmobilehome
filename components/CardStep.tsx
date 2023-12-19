@@ -1,10 +1,21 @@
+import { motion } from "framer-motion";
+
 interface CardProp {
   title: string;
   description: string;
+  transitionDelay: number;
 }
 
 const CardStep = (props: CardProp) => (
-  <div className="border w-4/12 rounded-b bg-white shadow shadow-lg drop-shadow">
+  <motion.div
+    initial={{ opacity: 0, y: 40 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{
+      delay: props.transitionDelay,
+      duration: 0.95,
+      ease: [0.165, 0.84, 0.44, 1],
+    }}
+    className="border w-4/12 rounded-b bg-white shadow shadow-lg drop-shadow">
     <div className="bg-[#1E2B3A] text-white p-4 font-extrabold font-inter leading-[0.9] text-xl">
       <p>
         {props.title}
@@ -15,7 +26,7 @@ const CardStep = (props: CardProp) => (
         {props.description}
       </p>
     </div>
-  </div>
+  </motion.div>
 )
 
 export default CardStep;
