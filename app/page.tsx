@@ -3,11 +3,14 @@
 import { AnimatePresence } from "framer-motion";
 import NavigationBar from "@/components/NavigationBar";
 import Hero from "./views/sections/Hero";
+import PaperTexture from "@/components/PaperTexture";
 
 
 export default function Home() {
   return (
     <>
+      <PaperTexture />
+      
       <NavigationBar />
 
       <AnimatePresence>

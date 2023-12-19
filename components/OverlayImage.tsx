@@ -5,7 +5,7 @@ const OverlayImage = () => {
 
   const Background = () => (
     <div
-      className="absolute top-0 right-0 w-[80%] md:w-1/2 h-screen bg-[#1F2B3A]/20"
+      className="absolute top-0 right-0 w-[80%] md:w-1/2 h-screen bg-gray-400/50"
       style={{ clipPath: shape }}
     ></div>
   )
@@ -30,7 +30,7 @@ const OverlayImage = () => {
           backgroundImage: "url(/shutterstock_2283825159.jpg)"
         }}
         data-transition-in
-        className="z-50 absolute top-0 right-[-2px] w-[80%] md:w-1/2 h-screen bg-cover bg-center"
+        className="z-10 absolute top-0 right-[-2px] w-[80%] md:w-1/2 h-screen bg-cover bg-center"
       ></motion.canvas>
     </>
   )

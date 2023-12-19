@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 
-import PaperTexture from "@/components/PaperTexture";
 import OverlayImage from "@/components/OverlayImage";
 import CardStep from "@/components/CardStep";
 import CallToActionButton from "@/components/CallToActionButton";
@@ -21,9 +20,9 @@ const Title = () => (
         duration: 0.95,
         ease: [0.165, 0.84, 0.44, 1],
       }}
-      className="relative md:ml-[-10px] md:mb-[37px] font-extrabold text-[16vw] md:text-[90px] font-inter text-[#1E2B3A] leading-[0.9] tracking-[-2px] z-[100]"
+      className="mb-5 md:mb-9 font-extrabold text-sky-950 tracking-[-2px] text-5xl md:text-8xl"
     >
-      <span className="text-[#407BBF]">Sell</span> Your Mobile <br /> Home <span className="text-[#407BBF]">Fast.</span>
+      <span className="text-cyan-600">Sell</span> Your Mobile <br /> Home <span className="text-cyan-600">Fast.</span>
     </motion.h1>
 
     <motion.h5
@@ -34,29 +33,28 @@ const Title = () => (
         duration: 0.95,
         ease: [0.165, 0.84, 0.44, 1],
       }}
-      className="relative md:ml-[-10px] md:mb-[37px] font-extrabold text-[16vw] md:text-[30px] font-inter text-[#1E2B3A] leading-[0.9] tracking-[-2px] z-[100]"
+      className="mb-5 md:mb-9 font-extrabold text-sky-950 tracking-[-2px] text-xl md:text-3xl"
     >
       We buy mobile homes in any condition. <br />
-      <span className="text-[#407BBF]">Get a fair cash offer in less than 48 hours!</span>
+      <span className="text-cyan-600">Get a fair cash offer in less than 48 hours!</span>
     </motion.h5>
   </>
 )
 
 const Hero = (props: Props) => {
   return (
-    <div id={props.id} key={props.id} className="min-h-[100vh] sm:min-h-screen w-screen flex flex-col relative bg-[#F2F3F5] font-inter overflow-hidden">
-      <PaperTexture />
+    <div id={props.id} key={props.id} className="min-h-screen w-screen flex flex-col relative bg-[#F2F3F5] font-inter overflow-hidden">
       <OverlayImage />
 
-      <div className="flex flex-col justify-center h-screen w-screen overflow-hidden grid-rows-[1fr_repeat(3,auto)_1fr] z-[100] pt-[30px] pb-[320px] px-4 md:px-20 md:py-0">
-        <div className="w-full h-[90%] flex flex-col justify-center">
+      <div className="h-screen w-screen flex flex-col justify-center items-center z-50 px-4">
+        <div className="w-full h-full flex flex-col justify-center">
           <div className="basis-7/12 flex flex-col justify-end">
             <Title />
 
             <CallToActionButton />
           </div>
 
-          <div className="basis-5/12 flex flex-col justify-end pb-10">
+          <div className="basis-5/12 flex flex-col justify-center pb-10">
             <div className="flex gap-10 w-10/12">
               <CardStep
                 title="Fast Closing"
