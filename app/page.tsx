@@ -414,39 +414,36 @@ const Main = () => {
         duration: 0.55,
         ease: [0.075, 0.82, 0.965, 1],
       }}
-      className="w-48"
-    >
-      <Link
-        href="/demo"
-        className="group rounded-full px-4 py-2 text-[13px] font-semibold transition-all flex items-center justify-center bg-[#FF6600] text-[#f5f7f9] no-underline active:scale-95 scale-100 duration-75"
-        style={{
-          boxShadow: "0 1px 1px #0c192714, 0 1px 3px #0c192724",
-        }}
-      >
-        <span className="mr-2"> Request an Offer </span>
-        <svg
-          className="w-5 h-5"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M13.75 6.75L19.25 12L13.75 17.25"
-            stroke="#f5f7f9"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M19 12H4.75"
-            stroke="#f5f7f9"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </Link>
+      className="flex">
+      <a href="#_" className="flex bg-[#FF6600] rounded-md px-3.5 py-2 m-1 overflow-hidden relative group cursor-pointer border-2 font-medium border-[#FF6600] text-[#FF6600] text-white">
+        <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-white top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
+        <span className="flex relative text-[#f5f7f9] transition duration-300 group-hover:text-[#FF6600] ease stroke-[#f5f7f9] hover:stroke-[#FF6600]">
+          Request an Offer&nbsp;&nbsp;
+          <svg
+            className="w-5 h-5 "
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13.75 6.75L19.25 12L13.75 17.25"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M19 12H4.75"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </span>
+
+      </a>
     </motion.div>
+
+
   )
 
   return (
