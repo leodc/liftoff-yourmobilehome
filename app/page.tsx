@@ -4,6 +4,7 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import PaperTexture from "@/components/PaperTexture";
 import OverlayImage from "@/components/OverlayImage";
+import CardStep from "@/components/CardStep";
 
 const Footer = () => (
   <div className="h-[60px] bg-[#1D2B3A] fixed bottom-0 z-20 w-full flex flex-row items-center justify-evenly">
@@ -413,7 +414,7 @@ const Main = () => {
         duration: 0.55,
         ease: [0.075, 0.82, 0.965, 1],
       }}
-      className="w-48 md:mb-[37px]"
+      className="w-48"
     >
       <Link
         href="/demo"
@@ -450,11 +451,33 @@ const Main = () => {
 
   return (
     <main className="flex flex-col justify-center h-[90%] static md:fixed w-screen overflow-hidden grid-rows-[1fr_repeat(3,auto)_1fr] z-[100] pt-[30px] pb-[320px] px-4 md:px-20 md:py-0">
-      <Title />
 
-      <CallToActionButton />
+      <div className="basis-7/12 flex flex-col justify-end">
+        <Title />
 
-      <motion.div
+        <CallToActionButton />
+      </div>
+
+      <div className="basis-5/12 flex flex-col justify-end pb-10">
+        <div className="flex gap-10 w-10/12">
+          <CardStep
+            title="Fast Closing"
+            description="No need to wait for bank approvals. We can close in as little as 7 days."
+          />
+
+          <CardStep
+            title="Fair Cash Offer"
+            description="We give you a fair cash offer, no hidden fees or costs."
+          />
+
+          <CardStep
+            title="Any Condition"
+            description="We buy mobile homes in any condition. You don&lsquo;t need to make any repairs or improvements."
+          />
+        </div>
+      </div>
+
+      {/* <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -568,7 +591,7 @@ const Main = () => {
             </svg>
           </Link>
         </motion.div>
-      </div>
+      </div> */}
     </main>
   )
 }
@@ -583,7 +606,7 @@ export default function Home() {
 
         <OverlayImage />
 
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </AnimatePresence>
   );
