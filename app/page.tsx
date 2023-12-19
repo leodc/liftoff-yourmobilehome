@@ -447,33 +447,34 @@ const Main = () => {
   )
 
   return (
-    <main className="flex flex-col justify-center h-[90%] static md:fixed w-screen overflow-hidden grid-rows-[1fr_repeat(3,auto)_1fr] z-[100] pt-[30px] pb-[320px] px-4 md:px-20 md:py-0">
+    <main className="flex flex-col justify-center h-screen w-screen overflow-hidden grid-rows-[1fr_repeat(3,auto)_1fr] z-[100] pt-[30px] pb-[320px] px-4 md:px-20 md:py-0">
+      <div className="w-full h-[90%] flex flex-col justify-center">
+        <div className="basis-7/12 flex flex-col justify-end">
+          <Title />
 
-      <div className="basis-7/12 flex flex-col justify-end">
-        <Title />
+          <CallToActionButton />
+        </div>
 
-        <CallToActionButton />
-      </div>
+        <div className="basis-5/12 flex flex-col justify-end pb-10">
+          <div className="flex gap-10 w-10/12">
+            <CardStep
+              title="Fast Closing"
+              description="No need to wait for bank approvals. We can close in as little as 7 days."
+              transitionDelay={0.15}
+            />
 
-      <div className="basis-5/12 flex flex-col justify-end pb-10">
-        <div className="flex gap-10 w-10/12">
-          <CardStep
-            title="Fast Closing"
-            description="No need to wait for bank approvals. We can close in as little as 7 days."
-            transitionDelay={0.15}
-          />
+            <CardStep
+              title="Fair Cash Offer"
+              description="We give you a fair cash offer, no hidden fees or costs."
+              transitionDelay={0.30}
+            />
 
-          <CardStep
-            title="Fair Cash Offer"
-            description="We give you a fair cash offer, no hidden fees or costs."
-            transitionDelay={0.30}
-          />
-
-          <CardStep
-            title="Any Condition"
-            description="We buy mobile homes in any condition. You don&lsquo;t need to make any repairs or improvements."
-            transitionDelay={0.45}
-          />
+            <CardStep
+              title="Any Condition"
+              description="We buy mobile homes in any condition. You don&lsquo;t need to make any repairs or improvements."
+              transitionDelay={0.45}
+            />
+          </div>
         </div>
       </div>
     </main>
@@ -482,16 +483,22 @@ const Main = () => {
 
 export default function Home() {
   return (
-    <AnimatePresence>
-      <div className="min-h-[100vh] sm:min-h-screen w-screen flex flex-col relative bg-[#F2F3F5] font-inter overflow-hidden">
-        <PaperTexture />
+    <>
+      <AnimatePresence>
+        <div className="min-h-[100vh] sm:min-h-screen w-screen flex flex-col relative bg-[#F2F3F5] font-inter overflow-hidden">
+          <PaperTexture />
 
-        <Main />
+          <Main />
 
-        <OverlayImage />
+          <OverlayImage />
 
-        {/* <Footer /> */}
-      </div>
-    </AnimatePresence>
+          {/* <Footer /> */}
+        </div>
+
+        <div className="h-screen w-full">
+
+        </div>
+      </AnimatePresence>
+    </>
   );
 }

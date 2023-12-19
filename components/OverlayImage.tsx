@@ -1,12 +1,11 @@
 import { motion } from "framer-motion";
 
-
 const OverlayImage = () => {
   const shape = "polygon(100px 0,100% 0,calc(100% + 225px) 100%, 480px 100%)";
 
   const Background = () => (
     <div
-      className="fixed top-0 right-0 w-[80%] md:w-1/2 h-screen bg-[#1F2B3A]/20"
+      className="absolute top-0 right-0 w-[80%] md:w-1/2 h-screen bg-[#1F2B3A]/20"
       style={{ clipPath: shape }}
     ></div>
   )
@@ -31,7 +30,7 @@ const OverlayImage = () => {
           backgroundImage: "url(/shutterstock_2283825159.jpg)"
         }}
         data-transition-in
-        className="z-50 fixed top-0 right-[-2px] w-[80%] md:w-1/2 h-screen bg-cover bg-center"
+        className="z-50 absolute top-0 right-[-2px] w-[80%] md:w-1/2 h-screen bg-cover bg-center"
       ></motion.canvas>
     </>
   )
