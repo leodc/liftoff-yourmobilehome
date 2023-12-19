@@ -487,7 +487,7 @@ export default function Home() {
       <NavigationBar />
 
       <AnimatePresence>
-        <div className="min-h-[100vh] sm:min-h-screen w-screen flex flex-col relative bg-[#F2F3F5] font-inter overflow-hidden">
+        <div id="home" key="home" className="min-h-[100vh] sm:min-h-screen w-screen flex flex-col relative bg-[#F2F3F5] font-inter overflow-hidden">
           <PaperTexture />
 
           <Main />
@@ -497,7 +497,7 @@ export default function Home() {
           {/* <Footer /> */}
         </div>
 
-        <div className="h-screen w-full">
+        <div id="request-offer" key="request-offer" className="h-screen w-full">
 
         </div>
       </AnimatePresence>
