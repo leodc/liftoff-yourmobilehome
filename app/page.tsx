@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import PaperTexture from "@/components/PaperTexture";
 import OverlayImage from "@/components/OverlayImage";
