@@ -15,13 +15,13 @@ const CardStep = (props: CardProp) => (
       duration: 0.95,
       ease: [0.165, 0.84, 0.44, 1],
     }}
-    className="border w-4/12 rounded-b bg-white shadow shadow-lg drop-shadow">
-    <div className="bg-sky-950 text-white p-4 font-extrabold font-inter leading-[0.9] text-xl">
+    className="border w-full md:w-4/12 rounded-b bg-white shadow shadow-lg drop-shadow">
+    <div className="bg-sky-950 text-white font-bold md:font-extrabold text-sm md:text-xl p-2 md:p-4">
       <p>
         {props.title}
       </p>
     </div>
-    <div className="p-4 text-sky-950 flex flex-grow items-center">
+    <div className="bg-white text-sky-950 text-sm md:text-base p-2 md:p-4">
       <p>
         {props.description}
       </p>

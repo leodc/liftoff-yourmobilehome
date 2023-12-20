@@ -13,7 +13,7 @@ const MotionContainer = (props: MotionProps) => (
       duration: 0.55,
       ease: [0.075, 0.82, 0.965, 1],
     }}
-    className="flex">
+    className="flex mb-20 md:mb-0">
     {props.children}
   </motion.div>
 )
